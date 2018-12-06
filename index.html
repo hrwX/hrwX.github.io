@@ -1,76 +1,43 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Center the loader */
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
-}
-
-@-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
-}
-
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
-}
-
-#myDiv {
-  display: none;
-  text-align: center;
-}
-</style>
-</head>
-<body onload="myFunction()" style="margin:0;">
-
-  <div id="loader"></div>
-
-  <div style="display:none;" id="myDiv" class="animate-bottom">
-    <h2>Under Development!</h2>
-  </div>
-
-  <script>
-    var myVar;
-    function myFunction() {
-        myVar = setTimeout(showPage, 3000);
-    }
-    function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("myDiv").style.display = "block";
-    }
-  </script>
-
-</body>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <div class="toolbar">
+        <a href="#" data-command='undo'><i class='fa fa-undo'></i></a>
+        <a href="#" data-command='redo'><i class='fa fa-repeat'></i></a>
+        <div class="fore-wrapper"><i class='fa fa-font' style='color:#C96;'></i>
+          <div class="fore-palette">
+          </div>
+        </div>
+        <div class="back-wrapper"><i class='fa fa-font' style='background:#C96;'></i>
+          <div class="back-palette">
+          </div>
+        </div>
+        <a href="#" data-command='bold'><i class='fa fa-bold'></i></a>
+        <a href="#" data-command='italic'><i class='fa fa-italic'></i></a>
+        <a href="#" data-command='underline'><i class='fa fa-underline'></i></a>
+        <a href="#" data-command='strikeThrough'><i class='fa fa-strikethrough'></i></a>
+        <a href="#" data-command='justifyLeft'><i class='fa fa-align-left'></i></a>
+        <a href="#" data-command='justifyCenter'><i class='fa fa-align-center'></i></a>
+        <a href="#" data-command='justifyRight'><i class='fa fa-align-right'></i></a>
+        <a href="#" data-command='justifyFull'><i class='fa fa-align-justify'></i></a>
+        <a href="#" data-command='indent'><i class='fa fa-indent'></i></a>
+        <a href="#" data-command='outdent'><i class='fa fa-outdent'></i></a>
+        <a href="#" data-command='insertUnorderedList'><i class='fa fa-list-ul'></i></a>
+        <a href="#" data-command='insertOrderedList'><i class='fa fa-list-ol'></i></a>
+        <a href="#" data-command='h1'>H1</a>
+        <a href="#" data-command='h2'>H2</a>
+        <a href="#" data-command='createlink'><i class='fa fa-link'></i></a>
+        <a href="#" data-command='unlink'><i class='fa fa-unlink'></i></a>
+        <a href="#" data-command='insertimage'><i class='fa fa-image'></i></a>
+        <a href="#" data-command='p'>P</a>
+        <a href="#" data-command='subscript'><i class='fa fa-subscript'></i></a>
+        <a href="#" data-command='superscript'><i class='fa fa-superscript'></i></a>
+      </div>
+      <div id='editor' contenteditable>
+        <h1>A WYSIWYG Editor.</h1>
+        <p>Try making some changes here. Add your own text or maybe an image.</p>
+      </div>
+  </body>
 </html>
